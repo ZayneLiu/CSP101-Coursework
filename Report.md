@@ -24,6 +24,8 @@
 - [Conclusion](#conclusion)
 - [References](#references)
 
+<div style="page-break-after: always;"></div>
+
 # Procedural
 The syntax and semantics for procedural programming language (i.e. `C`) will be described in the comments.
 ```c

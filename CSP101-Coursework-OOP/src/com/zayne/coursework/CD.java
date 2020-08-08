@@ -27,6 +27,7 @@ public class CD extends Item {
         this.numOfTracks = numOfTracks;
     }
 
+    // Overriding `Print()` in parent class `Item`.
     public void Print(){
         System.out.printf("Title: \t\t%s\n",getTitle());
         System.out.printf("Artist: \t%s\n",getArtist());

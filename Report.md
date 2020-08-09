@@ -42,14 +42,15 @@ The syntax and semantics for procedural programming language (i.e. `C`) will be 
 // `struct` definition.
 struct CD
 {
-	int numberOfTracks;
-	bool isAvailable;
-    // String definition with fixed length.
-	char title[Max_String_Length];
+int numberOfTracks;
+bool isAvailable;
+// String definition with fixed length.
+char title[Max_String_Length];
 };
 
 // Function definition.
 int main(int argc, const char *argv[]){
+
     // Array of CD definition.
     struct CD cd_list[Max_Record_List_Size];
     // Variable definition and initialisation.

@@ -5,10 +5,9 @@
 
 ### HIC ID: 31423
 # Table of Contents <!-- omit in toc -->
-- [Procedural](#procedural)
-- [OOP](#oop)
-- [Differences between Procedural & Object-Oriented Programming Paradigm](#differences-between-procedural--object-oriented-programming-paradigm)
-- [Benefits of Inheritance and Polymorphism](#benefits-of-inheritance-and-polymorphism)
+- [Task 1 - Procedural Programming](#task-1---procedural-programming)
+- [Task 2 - Object Oriented Programming](#task-2---object-oriented-programming)
+- [Task 3 - Advanced OOP: Inheritance and Polymorphism](#task-3---advanced-oop-inheritance-and-polymorphism)
   - [Inheritance](#inheritance)
     - [Before inheritance](#before-inheritance)
         - [Class CD](#class-cd)
@@ -21,12 +20,14 @@
         - [`Item.java`](#itemjava)
         - [`DVD.java`](#dvdjava)
         - [`CD.java`](#cdjava)
+- [Task 4](#task-4)
+  - [Procedural Programming vs. Object-Oriented Programming](#procedural-programming-vs-object-oriented-programming)
 - [Conclusion](#conclusion)
 - [References](#references)
 
 <div style="page-break-after: always;"></div>
 
-# Procedural
+# Task 1 - Procedural Programming
 The syntax and semantics for procedural programming language (i.e. `C`) will be described in the comments.
 ```c
 // Include statement.
@@ -74,7 +75,7 @@ int main(int argc, const char *argv[]){
 
 ```
 
-# OOP
+# Task 2 - Object Oriented Programming
 The syntax and semantics for OOP (object-oriented programming language) (i.e. `Java`) will be described in the comments.
 
 ```java
@@ -143,77 +144,8 @@ public class Database {
 }
 ```
 
-# Differences between Procedural & Object-Oriented Programming Paradigm
 
-Procedural programming paradigm is based on the concept of *"procedure call"*, which is essentially a series of steps or commands executing sequentially. Procedures (a.k.a. routines, subroutines, or functions) are the building blocks of procedural programming, with `if`, `while`, and `for` statement to implement *control flow*  [citation needed].
-
-Control flow can be categorized by their behaviour:
-- Branching (i.e. to determine which part of the program should be executed based on certain conditions)
-  - `if...else...`
-  - `switch...case...`
-- Iteration (i.e. to repeatedly execute identical operations)
-  - `for` / `foreach`
-  - ```c
-    // for loop in C.
-  	for (int i = 0; i<total_CDs; i++) {
-		printf("%s\n", cd_list[i].title);
-	}
-    ```
-There is `struct` in C to define structural data, but is not as powerful as `Class` provided by OOP.
-```c
-struct CD
-{
-	int numberOfTracks;
-	bool isAvailable;
-	// Total time of playing.
-	int playingTime;
-	// String definition with fixed length.
-	char artist[Max_String_Length];
-	char title[Max_String_Length];
-	char comments[Max_String_Length];
-};
-```
-___
-Whereas object-oriented programming paradigm is based on the concept of modeling real world `objects`, where each kind of objects is called a `class`. Classes encapsulate both `data` (i.e. fields, attributes or properties) and `behaviour` (i.e. methods) of certain object types.
-```java
-public class Database {
-    // Data.
-    public static ArrayList<Item> itemsList = new ArrayList<>(20);
-
-    // Behaviours - START
-    public void addItem(Item item) { itemsList.add(item); }
-
-    public void ListAllItems() {
-        System.out.println("====== Items ======");
-        // Foreach loop to iterate through `itemList`
-        for (var item : itemsList) {
-            item.Print();
-        }
-    }
-    // Behaviours - END
-}
-```
-
-Essentially, object-oriented programming empowers procedural programming with a much better way to describe and structure data while keeping the concepts of *Variables* and *Procedures*.
-
-Also, in the code below, each instance of `Item` class has a different set of values for their non-static properties (in this case, the value of protected member `title`), the keyword `this` is used to refer to the current instance, in order to access instance specific data (Troelsen, 2012).
-```java
-public class Item {
-    protected String title;
-
-    // Getters
-    public String getTitle() { return title; }
-
-    // Setters
-    public void setTitle(String title) { this.title = title; }
-    public void Print() { }
-}
-```
-
-The process of wrapping different kinds of data related to a certain type of object is called *Encapsulation*, which is the first pilar of OOP (Troelsen, 2012).
-
-# Benefits of Inheritance and Polymorphism
-
+# Task 3 - Advanced OOP: Inheritance and Polymorphism
 ## Inheritance
 The concept of inheritance in OOP is created to further describe the relationships between modeled 'real-world objects' (i.e. the relationship between different classes). Inheritance makes some shared code reusable (i.e. less code repeated), by describing it with a parent-child relationship. Parent class has the shared logic (i.e. common properties and methods), and all child classes can inherit the shared data from their parent class.
 ### Before inheritance
@@ -373,6 +305,78 @@ public class CD extends Item {
 
 Apart from its usage with inheritance, polymorphism its self can alter the behaviour of any method by simply `overloading` the method with same method name, but different function signature(parameter names, parameter types and order of parameters ).
 ___
+
+# Task 4
+## Procedural Programming vs. Object-Oriented Programming
+
+Procedural programming paradigm is based on the concept of *"procedure call"*, which is essentially a series of steps or commands executing sequentially. Procedures (a.k.a. routines, subroutines, or functions) are the building blocks of procedural programming, with `if`, `while`, and `for` statement to implement *control flow*  [citation needed].
+
+Control flow can be categorized by their behaviour:
+- Branching (i.e. to determine which part of the program should be executed based on certain conditions)
+  - `if...else...`
+  - `switch...case...`
+- Iteration (i.e. to repeatedly execute identical operations)
+  - `for` / `foreach`
+  - ```c
+    // for loop in C.
+  	for (int i = 0; i<total_CDs; i++) {
+		printf("%s\n", cd_list[i].title);
+	}
+    ```
+There is `struct` in C to define structural data, but is not as powerful as `Class` provided by OOP.
+```c
+struct CD
+{
+	int numberOfTracks;
+	bool isAvailable;
+	// Total time of playing.
+	int playingTime;
+	// String definition with fixed length.
+	char artist[Max_String_Length];
+	char title[Max_String_Length];
+	char comments[Max_String_Length];
+};
+```
+___
+Whereas object-oriented programming paradigm is based on the concept of modeling real world `objects`, where each kind of objects is called a `class`. Classes encapsulate both `data` (i.e. fields, attributes or properties) and `behaviour` (i.e. methods) of certain object types.
+```java
+public class Database {
+    // Data.
+    public static ArrayList<Item> itemsList = new ArrayList<>(20);
+
+    // Behaviours - START
+    public void addItem(Item item) { itemsList.add(item); }
+
+    public void ListAllItems() {
+        System.out.println("====== Items ======");
+        // Foreach loop to iterate through `itemList`
+        for (var item : itemsList) {
+            item.Print();
+        }
+    }
+    // Behaviours - END
+}
+```
+
+Essentially, object-oriented programming empowers procedural programming with a much better way to describe and structure data while keeping the concepts of *Variables* and *Procedures*.
+
+Also, in the code below, each instance of `Item` class has a different set of values for their non-static properties (in this case, the value of protected member `title`), the keyword `this` is used to refer to the current instance, in order to access instance specific data (Troelsen, 2012).
+```java
+public class Item {
+    protected String title;
+
+    // Getters
+    public String getTitle() { return title; }
+
+    // Setters
+    public void setTitle(String title) { this.title = title; }
+    public void Print() { }
+}
+```
+
+The process of wrapping different kinds of data related to a certain type of object is called *Encapsulation*, which is the first pilar of OOP (Troelsen, 2012).
+
+
 # Conclusion
 Encapsulation, Inheritance and Polymorphism as the foundation of OOP, provides us with the ability to describe and structure data with complex relationship with encapsulation, reducing the amount of code repeated by improving code re-usability with inheritance, and increasing the flexibility of class behaviours with polymorphism.
 

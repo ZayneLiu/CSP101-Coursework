@@ -50,24 +50,23 @@ struct CD
 
 // Function definition.
 int main(int argc, const char *argv[]){
-
     // Array of CD definition.
     struct CD cd_list[Max_Record_List_Size];
     // Variable definition and initialisation.
-	struct CD cd1, cd2;
-	int total_CDs = 0;
-	// Assign string value to variable.
-	strcpy(cd1.title, "title_CD1");
+    struct CD cd1, cd2;
+    int total_CDs = 0;
+    // Assign string value to variable.
+    strcpy(cd1.title, "title_CD1");
     // Access struct data.
-	cd1.numberOfTracks = 23;
+    cd1.numberOfTracks = 23;
     cd1.isAvailable = false;
     // Add item to array.
-	dvd_list[0] = dvd1;
-	dvd_list[1] = dvd2;
+    dvd_list[0] = dvd1;
+    dvd_list[1] = dvd2;
     // For loop.
-	for (int i = 0; i<total_DVDs; i++) {
-		printf("%s\n", dvd_list[i].title);
-	}
+    for (int i = 0; i<total_DVDs; i++) {
+        printf("%s\n", dvd_list[i].title);
+    }
     // Print function
     printf("%s\n", cd_list[i].title);
 
@@ -87,7 +86,7 @@ import java.util.ArrayList;
 
 // Class definition.
 public class Item {
-	// Class member definition
+    // Class member definition
     /** The title of the CD/DVD. */
     protected String title;
 
@@ -100,7 +99,7 @@ public class Item {
     public void setTitle(String title){
         this.title = title;
     }
-	// Function declaration.
+    // Function declaration.
     public void Print(){
 
     }
@@ -115,9 +114,9 @@ public class Database {
     public Database(){
 
     }
-	// Class member & ArrayList definition.
+    // Class member & ArrayList definition.
     public static ArrayList<Item> itemList = new ArrayList<>(20) {
-		// Overriding add method.
+        // Overriding add method.
         @Override
         public boolean add(Item item) {
             // `if` statement.
@@ -135,7 +134,7 @@ public class Database {
     }
 
     public void ListAllItems() {
-		// Print function.
+        // Print function.
         System.out.println("====== Items ======");
         // `foreach` loop.
         for (var item : itemList) {
